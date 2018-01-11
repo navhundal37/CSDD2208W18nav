@@ -1,0 +1,52 @@
+day 3 queries
+
+create table customer1 (
+        customerId int(2),
+        name varchar(20),
+        nickname varchar(10),
+        address varchar(50),
+        city varchar(10),
+        postalcode int(8))
+          ;
+insert into customer1 values(1,'ashley','ash','32 washington street','WDC',321200);
+
+insert into customer1 values(2,'Bom marley','BM','keele street','toronto',100100);
+insert into customer1 values(3,'charlies theron','cher','329 empire state building','new york',120134);
+insert into customer1 values(4,'denial jack','DJ','spartan building ,East','brazil',341020);
+insert into customer1 values(5,'donna newman','new','250 carlson blvd','toronto',130120);
+insert into customer1 values(6,'eston M.','M.','21 york. DV.','toronto',201023);
+insert into customer1 values(7,'bobby chacko','chac','kennedy','new york',320300);
+ insert into customer1 values(8,'ashko charles','ak','washington DC','USA',421044);
+ insert into customer1 values(9,'ashko charles','ak','washington DC','USA',418921);
+insert into customer1 values(10,'jack sp','sparrow','orkville','GTA',418925);
+
+
+
+
+day 4 commands
+
+select DISTINCT(city) AS CustomerCity from customer1 where name LIKE '_sh%';
+select DISTINCT(city) AS CustomerCity from customer1;
+select DISTINCT(city) AS a from customer1; 
+select count(*) AS  Total_city from customer1 where city not IN('GTA','Toronto');
+select DISTINCT(city) from customer1;
+select customerId,name,nickname from customer1 where city NOT IN ('WDC','toronto');
+select count(*) AS  Total_city from customer1 where city not IN('GTA','Toronto');
+select count(*) AS  Total_city from customer1 where city LIKE 'T%';
+select count(*) AS  nameStartWithA from customer1 where name LIKE 'A%';
+select customerId,name AS Fullname from customer1 where nickname not IN ('BM','DJ','new');
+ select * from customer1 order by name asc;
+ select * from customer1 order by city asc;
+select count(*),city from customer1 group by city;
+ select city,count(city)*100/10 as "customers%" from customer1 group by city;
+select * from customer1 where customerId>7;
+select * from customer1 order by customerId desc limit 3;
+ select * from (select * from customer1 order by customerId desc LIMIT 3) c order by customerId asc;
+
+ INSERT INTO customer1 (customerId,name) VALUES(11,'kESHAV');
+select * from customer1 where nickname IS NULL;
+select * from customer1 where nickname LIKE 'd%';
+select * from customer1 where nickname IS not null;
+
+
+
